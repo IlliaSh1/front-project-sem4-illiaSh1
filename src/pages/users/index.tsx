@@ -3,8 +3,8 @@ import { Flex } from "antd";
 import { ColumnsType } from "antd/es/table";
 import { API_USERS_ROUTE } from "../../app/routing/config";
 import ApiContext from "../../context/apiContext";
-import { ButtonStyle } from "../../components/Button";
-import { TableStyle } from "../../components/Table";
+import { ButtonStyle } from "../../components/Button/Button.styles";
+import { TableStyle } from "../../components/Tables/Table.styles";
 
 interface UserType {
   id: number;

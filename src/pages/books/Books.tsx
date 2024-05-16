@@ -1,6 +1,6 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import axios from "axios";
-import { Button, Flex, Table, TableColumnsType } from "antd";
+import { Flex } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import {
   API_ADD_BOOK_TO_FAVORITE_ROUTE,
@@ -8,19 +8,18 @@ import {
   API_REMOVE_BOOK_TO_FAVORITE_ROUTE,
   LOGIN_ROUTE,
 } from "../../app/routing/config";
-import { ButtonIconStyle, ButtonStyle } from "../../components/Button";
-import { TableStyle } from "../../components/Table";
+import { ButtonStyle } from "../../components/Button/Button.styles";
+import { TableStyle } from "../../components/Tables/Table.styles";
 import ApiContext from "../../context/apiContext";
 import AuthContext from "../../context/authContext";
-
-import BooksTable from "../../components/Tables/BookTable";
 
 import { useNavigate } from "react-router-dom";
 
 import HeartIcon from "../../components/SvgIcons/heartIcon";
 import Icon from "@ant-design/icons";
 import { useQuery, useQueryClient } from "react-query";
-import { IBook } from "./elements/book.interface";
+import { IBook } from "../../types/book.interface";
+import { BookTable } from "../../components/Tables/BookTable/BookTable";
 
 const LIMIT_LIST_BOOKS = 3;
 
@@ -66,90 +65,6 @@ function Books() {
   );
 
   console.warn("[BOOKS PAGE]");
-  const book_table_columns: ColumnsType<IBook> = [
-    {
-      title: "Id",
-      dataIndex: "id",
-      key: "id",
-    },
-    {
-      title: "Название",
-      dataIndex: "name",
-      key: "name",
-      render: (name, book) => <a href={book.link}>{name}</a>,
-    },
-    {
-      title: "Действия",
-      dataIndex: "is_favorite",
-      key: "is_favorite",
-      render: (is_favorite: boolean, book, idx: number) => (
-        <>
-          {is_favorite ? (
-            <ButtonStyle
-              danger
-              size="large"
-              onClick={async () => {
-                await removeBookFromFavorite(book, idx);
-              }}
-              icon={<Icon component={HeartIcon} />}
-            />
-          ) : (
-            <ButtonStyle
-              size="large"
-              onClick={async () => {
-                await addBookToFavorite(book, idx);
-              }}
-              icon={<Icon component={HeartIcon} />}
-            />
-          )}
-        </>
-      ),
-    },
-    {
-      title: "Авторы",
-      dataIndex: "authors",
-      key: "authors",
-      render: (authors) => (
-        <>
-          {authors.map((author: string, idx: number) => {
-            return (
-              <>
-                {author}
-                {idx < authors.length - 1 ? ", " : ""}
-              </>
-            );
-          })}
-        </>
-      ),
-    },
-    {
-      title: "Год публикации",
-      dataIndex: "year_published",
-      key: "year_published",
-    },
-    {
-      title: "Количество страниц",
-      dataIndex: "pages_count",
-      key: "pages_count",
-    },
-    {
-      title: "Дисциплины",
-      dataIndex: "disciplines",
-      key: "disciplines",
-      render: (disciplines) => (
-        <>
-          {disciplines.map((discipline: string, idx: number) => {
-            return (
-              <>
-                {discipline}
-                {idx < disciplines.length - 1 ? ", " : ""}
-              </>
-            );
-          })}
-        </>
-      ),
-    },
-  ];
 
   const addBookToFavorite = useCallback(
     async (book: IBook, idx: number) => {
@@ -206,12 +121,12 @@ function Books() {
     <div className="Books">
       <h2>Книги</h2>
       <p>Всего: {booksCount}</p>
-      <TableStyle
-        dataSource={books}
-        columns={book_table_columns}
-        loading={isLoading}
-        pagination={false}
-        rowKey={(record) => String(record.id)}
+      <BookTable
+        books={books}
+        isLoading={isLoading}
+        // isError={isError}
+        addBookToFavorite={addBookToFavorite}
+        removeBookFromFavorite={removeBookFromFavorite}
       />
       <Flex className="" justify="center" align="center" gap="15px">
         <ButtonStyle onClick={() => setPage(page - 1)} disabled={page === 1}>
@@ -225,7 +140,6 @@ function Books() {
         </ButtonStyle>
       </Flex>
     </div>
-    // <BooksTable></BooksTable>
   );
 }
 

@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 interface StyledProps {
   display?: string;
-  justifyContent?: string;
 
   height?: string;
 
   flexDirection?: string;
 
   gap?: string;
+  justifyContent?: string;
 }
 
 export const WrapperStyle = styled.div<StyledProps>`

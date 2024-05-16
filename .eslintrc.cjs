@@ -53,5 +53,6 @@ module.exports = {
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-confusing-void-expression": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
   },
 };

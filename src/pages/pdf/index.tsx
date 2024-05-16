@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Page, Text, View, Document, StyleSheet, PDFDownloadLink } from "@react-pdf/renderer";
-import { ButtonStyle } from "../../components/Button";
+import { ButtonStyle } from "../../components/Button/Button.styles";
 import FormStyle from "../../components/Form";
 import LabelStyle from "../../components/Form/Label";
 import InputStyle from "../../components/Form/Input";

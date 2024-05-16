@@ -16,7 +16,7 @@ import Icon from "@ant-design/icons";
 import styled from "styled-components";
 import { ListStyle } from "../List";
 import { LinkStyle } from "../Link";
-import { ButtonStyle } from "../Button";
+import { ButtonStyle } from "../Button/Button.styles";
 import { Link } from "react-router-dom";
 import MoonIcon from "../SvgIcons/moonIcon";
 import SunIcon from "../SvgIcons/sunIcon";
@@ -33,12 +33,13 @@ export const NavbarStyle = styled.nav<StyledProps>`
 `;
 
 const MenuLink = ({ to, content, noStyle }: { to: string; content: any; noStyle?: boolean }) => {
-  if (noStyle)
+  if (noStyle) {
     return (
       <Link className="header__menu-link" to={to}>
         {content}
       </Link>
     );
+  }
 
   return (
     <LinkStyle className="header__menu-link" to={to}>
@@ -59,7 +60,7 @@ function instanceofITheme(str: string): str is ITheme {
 function Navbar() {
   const [currentTheme, setCurrentTheme] = useState<ITheme>(
     (function initTheme(): ITheme {
-      let theme = localStorage.getItem("theme");
+      const theme = localStorage.getItem("theme");
       if (theme === null || !instanceofITheme(theme)) return "light";
 
       document.documentElement.setAttribute("data-theme", theme);
@@ -74,10 +75,10 @@ function Navbar() {
     setCurrentTheme(newTheme);
   };
 
-  let { user } = useContext(AuthContext);
-  let { isAuth } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  const { isAuth } = useContext(AuthContext);
 
-  let menuItems = [
+  const menuItems = [
     {
       content: (
         <MenuLink

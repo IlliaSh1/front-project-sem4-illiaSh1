@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import AuthContext from "../../context/authContext";
-import { ButtonStyle } from "../../components/Button";
+import { ButtonStyle } from "../../components/Button/Button.styles";
 import FormStyle from "../../components/Form";
 import LabelStyle from "../../components/Form/Label";
 import InputStyle from "../../components/Form/Input";

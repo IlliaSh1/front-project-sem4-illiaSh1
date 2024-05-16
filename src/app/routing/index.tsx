@@ -10,13 +10,13 @@ import {
   UNIVERSITIES_D_PAGINATION,
 } from "./config";
 
-import Books from "../../pages/books";
+import Books from "../../pages/books/Books";
 import Login from "../../pages/users/login";
 import AllUsers from "../../pages/users";
 
 import AuthRoute from "./routes/authRoute";
 import AdminRoute from "./routes/adminRoute";
-import FavoriteBooks from "../../pages/books/favorite_books";
+import FavoriteBooks from "../../pages/books/FavoriteBooks";
 import Home from "../../pages/home";
 import Feedbacks from "../../pages/feedback";
 // import MyDocument from '../../pages/pdf';

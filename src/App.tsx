@@ -6,8 +6,8 @@ import Navbar from "./components/Navbar";
 import { AuthProvider } from "./context/authContext";
 import { ApiProvider } from "./context/apiContext";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
-import { WrapperStyle } from "./components/Wrapper";
+import Header from "./components/Header/Header";
+import { WrapperStyle } from "./components/Wrapper/Wrapper";
 import { MainStyle } from "./components/Main";
 
 function App() {

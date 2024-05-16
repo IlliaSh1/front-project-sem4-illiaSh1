@@ -1,16 +1,17 @@
 import styled from "styled-components";
-import { WrapperStyle } from "../Wrapper";
+import { WrapperStyle } from "../Wrapper/Wrapper";
 import Navbar from "../Navbar";
 import { HOME_ROUTE } from "../../app/routing/config";
 import { LinkStyle } from "../Link";
 
-interface StyledProps {
-  // height?: string;
-  // flexDirection?: string;
-  // gap?: string;
-}
+// interface StyledProps {
+//   // height?: string;
+//   // flexDirection?: string;
+//   // gap?: string;
+// }
 
-const HeaderStyle = styled.header<StyledProps>`
+// const HeaderStyle = styled.header<StyledProps>`
+const HeaderStyle = styled.header`
   z-index: 10;
 
   position: sticky;

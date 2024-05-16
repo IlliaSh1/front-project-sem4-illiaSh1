@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Flex, Form, Input } from "antd";
 import AuthContext from "../../context/authContext";
-import { ButtonStyle } from "../../components/Button";
+import { ButtonStyle } from "../../components/Button/Button.styles";
 import FormItemStyle from "../../components/Form/AntFormItem";
 import InputErrorStyle from "../../components/Form/InputError";
 
