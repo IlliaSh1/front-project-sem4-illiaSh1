@@ -179,7 +179,6 @@ function FavoriteBooks() {
   return (
     <div className="FavoriteBooks">
       <h2>Избранные книги </h2>
-      {/* @ts-expect-error  */}
       <TableStyle dataSource={dataSource} columns={book_table_columns} pagination={false} />
       <Flex className="" justify="center" align="center" gap="15px">
         <ButtonStyle

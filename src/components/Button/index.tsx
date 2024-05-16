@@ -3,6 +3,11 @@ import styled from "styled-components";
 import { Button } from "antd";
 
 export const ButtonStyle = styled(Button)`
+  & svg {
+    width: 1em;
+    height: 1em;
+  }
+
   /* Default btn */
   &.ant-btn-default {
     color: var(--text-color);
@@ -52,6 +57,10 @@ export const ButtonStyle = styled(Button)`
     border: none;
     box-shadow: none;
   }
+  &.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    color: var(--primary-color);
+    background-color: transparent;
+  }
 
   /* Btn-link */
   &.ant-btn-link {
@@ -71,5 +80,9 @@ export const ButtonIconStyle = styled(ButtonStyle)`
 
     border: none;
     box-shadow: none;
+  }
+  &.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    color: var(--primary-color);
+    background-color: transparent;
   }
 `;

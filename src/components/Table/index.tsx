@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import { Table } from "antd";
+import { Table, TableProps } from "antd";
 import ForwardTable from "antd/es/table/Table";
 
-export const TableStyle = styled(Table)`
+// Define the custom props you want to add to the TableStyle component
+interface TableStyleProps extends TableProps<any> {}
+
+export const TableStyle = styled(Table)<TableStyleProps>`
   &.ant-table-wrapper {
   }
 
