@@ -1,7 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import axios from "axios";
 import { Flex } from "antd";
-import type { ColumnsType } from "antd/es/table";
 import {
   API_ADD_BOOK_TO_FAVORITE_ROUTE,
   API_BOOKS_ROUTE,
@@ -9,14 +8,11 @@ import {
   LOGIN_ROUTE,
 } from "../../app/routing/config";
 import { ButtonStyle } from "../../components/Button/Button.styles";
-import { TableStyle } from "../../components/Tables/Table.styles";
 import ApiContext from "../../context/apiContext";
 import AuthContext from "../../context/authContext";
 
 import { useNavigate } from "react-router-dom";
 
-import HeartIcon from "../../components/SvgIcons/heartIcon";
-import Icon from "@ant-design/icons";
 import { useQuery, useQueryClient } from "react-query";
 import { IBook } from "../../types/book.interface";
 import { BookTable } from "../../components/Tables/BookTable/BookTable";
