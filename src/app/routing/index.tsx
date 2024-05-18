@@ -7,7 +7,7 @@ import {
   FEEDBACK_ROUTE,
   USERS_ROUTE,
   PDF_ROUTE,
-  UNIVERSITIES_D_PAGINATION,
+  UNIVERSITIES_DYNAMIC_PAGINATION,
 } from "./config";
 
 import Books from "../../pages/books/Books";
@@ -31,7 +31,7 @@ const MainRouter = () => {
     { path: FEEDBACK_ROUTE, element: <Feedbacks /> },
     { path: LOGIN_ROUTE, element: <Login /> },
     { path: PDF_ROUTE, element: <PdfPage /> },
-    { path: UNIVERSITIES_D_PAGINATION, element: <UniversitiesPage /> },
+    { path: UNIVERSITIES_DYNAMIC_PAGINATION, element: <UniversitiesPage /> },
     { path: "*", element: <Navigate to={"/"} replace /> },
   ];
 

@@ -2,13 +2,13 @@ import { useContext, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import AuthContext from "../../context/authContext";
 import { ButtonStyle } from "../../components/Button/Button.styles";
-import FormStyle from "../../components/Form";
+import FormStyle from "../../components/Form/Form.styles";
 import LabelStyle from "../../components/Form/Label";
 import InputStyle from "../../components/Form/Input";
 import InputErrorStyle from "../../components/Form/InputError";
 import TextareaStyle from "../../components/Form/Textarea";
-import { ListStyle } from "../../components/List";
-import CardStyle from "../../components/Card";
+import { ListStyle } from "../../components/List/List.styles";
+import CardStyle from "../../components/Card/Card.styles";
 
 interface IMyForm {
   title: string;
@@ -16,7 +16,7 @@ interface IMyForm {
 }
 
 function Feedbacks() {
-  let { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const {
     register, // метод для регистрации вашего инпута, для дальнейшей работы с ним

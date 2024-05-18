@@ -8,13 +8,14 @@ import {
   FEEDBACK_ROUTE,
   USERS_ROUTE,
   PDF_ROUTE,
+  UNIVERSITIES_DYNAMIC_PAGINATION,
 } from "../../app/routing/config";
 import AuthContext from "../../context/authContext";
 
 import Icon from "@ant-design/icons";
 
 import styled from "styled-components";
-import { ListStyle } from "../List";
+import { ListStyle } from "../List/List.styles";
 import { LinkStyle } from "../Link";
 import { ButtonStyle } from "../Button/Button.styles";
 import { Link } from "react-router-dom";
@@ -92,15 +93,18 @@ function Navbar() {
       content: <MenuLink to={BOOKS_ROUTE} content="Книги" />,
     },
     {
-      content: <MenuLink to={PDF_ROUTE} content="PDF" />,
+      isRendered: isAuth,
+      content: <MenuLink to={FAVORITE_BOOKS_ROUTE} content="Избранные книги" />,
     },
     {
       isRendered: isAuth && user.is_admin,
       content: <MenuLink to={USERS_ROUTE} content="Пользователи" />,
     },
     {
-      isRendered: isAuth,
-      content: <MenuLink to={FAVORITE_BOOKS_ROUTE} content="Избранные книги" />,
+      content: <MenuLink to={PDF_ROUTE} content="PDF" />,
+    },
+    {
+      content: <MenuLink to={UNIVERSITIES_DYNAMIC_PAGINATION} content="Динамическая пагинация" />,
     },
     {
       content: (

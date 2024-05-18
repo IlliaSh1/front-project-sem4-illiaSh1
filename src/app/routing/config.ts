@@ -25,4 +25,4 @@ export const API_USERS_ROUTE = "http://127.0.0.1:8000/users/api/v1/user/";
 // PDF
 export const PDF_ROUTE = "/pdf";
 //
-export const UNIVERSITIES_D_PAGINATION = "/universities";
+export const UNIVERSITIES_DYNAMIC_PAGINATION = "/universities";

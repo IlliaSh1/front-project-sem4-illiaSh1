@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { WrapperStyle } from "../Wrapper/Wrapper";
-import Navbar from "../Navbar";
+import { WrapperStyle } from "../Wrapper/Wrapper.styles";
+import Navbar from "../Navbar/Navbar";
 import { HOME_ROUTE } from "../../app/routing/config";
 import { LinkStyle } from "../Link";
 
