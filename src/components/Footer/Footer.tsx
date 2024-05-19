@@ -12,7 +12,7 @@ const FooterStyle = styled.footer<StyledProps>`
 function Footer() {
   return (
     <FooterStyle className="footer">
-      <p>Шамаров Илья Глебович, гр. 221-321</p>
+      <p data-testid="footer_credits">Шамаров Илья Глебович, гр. 221-321</p>
     </FooterStyle>
   );
 }

@@ -10,10 +10,10 @@ interface FormDataType {
   password: string;
 }
 
-type FieldType = {
+interface FieldType {
   username?: string;
   password?: string;
-};
+}
 
 interface ILoginFormErrors {
   username?: string;
@@ -25,8 +25,8 @@ function instanceOfILoginFormErrors(obj: any): obj is ILoginFormErrors {
 }
 
 function Login() {
-  let { login, logout } = useContext(AuthContext);
-  let { isAuth } = useContext(AuthContext);
+  const { login, logout } = useContext(AuthContext);
+  const { isAuth } = useContext(AuthContext);
 
   const [loginFormErrors, setLoginFormErrors] = useState<ILoginFormErrors>({});
 
@@ -69,21 +69,21 @@ function Login() {
           onFinishFailed={onFinishFailed}
           autoComplete="on"
         >
-          {/* @ts-ignore */}
+          {/* @ts-expect-error */}
           <FormItemStyle<FieldType>
             label="Имя пользователя"
             name="username"
             rules={[{ required: true, message: "Пожалуйста введите имя пользователя" }]}
           >
-            <Input />
+            <Input data-testid="login_username" />
           </FormItemStyle>
-          {/* @ts-ignore */}
+          {/* @ts-expect-error */}
           <FormItemStyle<FieldType>
             label="Пароль"
             name="password"
             rules={[{ required: true, message: "Пожалуйста введите пароль!" }]}
           >
-            <Input.Password />
+            <Input.Password data-testid="login_password" />
           </FormItemStyle>
 
           {loginFormErrors.detail ? (
@@ -95,7 +95,7 @@ function Login() {
           )}
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <ButtonStyle type="primary" htmlType="submit">
+            <ButtonStyle type="primary" htmlType="submit" data-testid="login_button">
               Войти
             </ButtonStyle>
           </Form.Item>
