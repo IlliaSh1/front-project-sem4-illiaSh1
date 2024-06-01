@@ -16,7 +16,7 @@ root.render(
   // </React.StrictMode>
 
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+    <BrowserRouter basename="/front-project-sem4-illiaSh1">
       <GlobalStyles />
       <App />
     </BrowserRouter>
