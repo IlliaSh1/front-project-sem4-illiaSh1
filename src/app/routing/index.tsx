@@ -11,18 +11,18 @@ import {
 } from "./config";
 
 import Books from "../../pages/books/Books";
-import Login from "../../pages/users/login";
 import AllUsers from "../../pages/users";
 
 import AuthRoute from "./routes/authRoute";
 import AdminRoute from "./routes/adminRoute";
 import FavoriteBooks from "../../pages/books/FavoriteBooks";
-import Home from "../../pages/home";
-import Feedbacks from "../../pages/feedback";
+import Home from "../../pages/home/Home";
+import Feedbacks from "../../pages/feedback/Feedbacks";
 // import MyDocument from '../../pages/pdf';
 // import PDFDownloadLink from '../../pages/pdf';
-import PdfPage from "../../pages/pdf";
+import PdfPage from "../../pages/pdf/Pdf";
 import UniversitiesPage from "../../pages/universities";
+import Login from "../../pages/users/Login";
 
 const MainRouter = () => {
   const basePaths: RouteObject[] = [

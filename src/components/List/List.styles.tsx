@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-interface StyledProps {
+interface ListStyledProps {
   height?: string;
   flexDirection?: string;
   alignItems?: string;
-
   gap?: string;
 }
 
-export const ListStyle = styled.ul<StyledProps>`
+const ListStyle = styled.ul<ListStyledProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => (flexDirection ? flexDirection : "column")};
   align-items: ${({ alignItems }) => (alignItems ? alignItems : "")};
@@ -21,3 +20,5 @@ export const ListStyle = styled.ul<StyledProps>`
 
   list-style-type: none;
 `;
+
+export default ListStyle;

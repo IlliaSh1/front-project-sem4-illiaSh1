@@ -15,13 +15,13 @@ import AuthContext from "../../context/authContext";
 import Icon from "@ant-design/icons";
 
 import styled from "styled-components";
-import { ListStyle } from "../List/List.styles";
 import { LinkStyle } from "../Link";
 import { ButtonStyle } from "../Button/Button.styles";
 import { Link } from "react-router-dom";
 import MoonIcon from "../SvgIcons/moonIcon";
 import SunIcon from "../SvgIcons/sunIcon";
 import HomeIcon from "../SvgIcons/homeIcon";
+import ListStyle from "../List/List.styles";
 
 interface StyledProps {
   height?: string;
@@ -85,7 +85,14 @@ function Navbar() {
         <MenuLink
           to={HOME_ROUTE}
           noStyle
-          content={<ButtonStyle shape="circle" className="button--theme_icon" icon={<Icon component={HomeIcon} />} />}
+          content={
+            <ButtonStyle
+              shape="circle"
+              className="button--theme_icon"
+              icon={<Icon component={HomeIcon} alt="На главную" />}
+              data-testid="home_page_button"
+            />
+          }
         />
       ),
     },
@@ -112,7 +119,13 @@ function Navbar() {
           onClick={changeTheme}
           shape="circle"
           className="button--theme_icon"
-          icon={currentTheme === "light" ? <Icon component={SunIcon} /> : <Icon component={MoonIcon} />}
+          icon={
+            currentTheme === "light" ? (
+              <Icon component={SunIcon} alt="Сменить тему" data-testid="change_theme" />
+            ) : (
+              <Icon component={MoonIcon} />
+            )
+          }
         />
       ),
     },
@@ -120,9 +133,25 @@ function Navbar() {
       content: (
         <>
           {!isAuth ? (
-            <MenuLink to={LOGIN_ROUTE} noStyle content={<ButtonStyle type="primary">Войти</ButtonStyle>} />
+            <MenuLink
+              to={LOGIN_ROUTE}
+              noStyle
+              content={
+                <ButtonStyle type="primary" data-testid="login_link_button">
+                  Войти
+                </ButtonStyle>
+              }
+            />
           ) : (
-            <MenuLink to={LOGIN_ROUTE} noStyle content={<ButtonStyle type="link">{user.username}</ButtonStyle>} />
+            <MenuLink
+              to={LOGIN_ROUTE}
+              noStyle
+              content={
+                <ButtonStyle type="link" data-testid="login_link_button">
+                  {user.username}
+                </ButtonStyle>
+              }
+            />
           )}
         </>
       ),
@@ -131,7 +160,15 @@ function Navbar() {
       content: (
         <>
           {isAuth ? (
-            <MenuLink to={FEEDBACK_ROUTE} noStyle content={<ButtonStyle type="primary">Оставить отзыв</ButtonStyle>} />
+            <MenuLink
+              to={FEEDBACK_ROUTE}
+              noStyle
+              content={
+                <ButtonStyle type="primary" data-testid="feedback_link_button">
+                  Оставить отзыв
+                </ButtonStyle>
+              }
+            />
           ) : (
             <></>
           )}

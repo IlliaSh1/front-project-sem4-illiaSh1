@@ -1,11 +1,10 @@
 import "./App.css";
 
 import MainRouter from "./app/routing";
-import Navbar from "./components/Navbar/Navbar";
 
 import { AuthProvider } from "./context/authContext";
 import { ApiProvider } from "./context/apiContext";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import { WrapperStyle } from "./components/Wrapper/Wrapper.styles";
 import { MainStyle } from "./components/Main";

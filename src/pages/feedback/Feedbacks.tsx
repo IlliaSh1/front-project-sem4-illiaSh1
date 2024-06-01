@@ -7,8 +7,9 @@ import LabelStyle from "../../components/Form/Label";
 import InputStyle from "../../components/Form/Input";
 import InputErrorStyle from "../../components/Form/InputError";
 import TextareaStyle from "../../components/Form/Textarea";
-import { ListStyle } from "../../components/List/List.styles";
+
 import CardStyle from "../../components/Card/Card.styles";
+import ListStyle from "../../components/List/List.styles";
 
 interface IMyForm {
   title: string;

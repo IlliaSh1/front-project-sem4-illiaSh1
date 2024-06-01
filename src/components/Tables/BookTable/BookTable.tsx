@@ -24,7 +24,11 @@ export const BookTable = ({ books, isLoading, addBookToFavorite, removeBookFromF
       title: "Название",
       dataIndex: "name",
       key: "name",
-      render: (name, book) => <a href={book.link}>{name}</a>,
+      render: (name, book) => (
+        <a href={book.link} data-testid="book-name">
+          {name}
+        </a>
+      ),
     },
     {
       title: "Действия",
