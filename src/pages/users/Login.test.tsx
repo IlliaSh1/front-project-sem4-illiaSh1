@@ -2,7 +2,7 @@ import { describe } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Login from "./Login";
+import Login from "./Login1";
 import { AuthProvider } from "../../context/authContext";
 import { ApiProvider } from "../../context/apiContext";
 import Navbar from "../../components/Navbar/Navbar";
