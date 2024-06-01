@@ -22,7 +22,7 @@ import Feedbacks from "../../pages/feedback/Feedbacks";
 // import PDFDownloadLink from '../../pages/pdf';
 import PdfPage from "../../pages/pdf/Pdf";
 import UniversitiesPage from "../../pages/universities";
-import Login from "../../pages/users/Login1";
+import Login from "../../pages/users/Login";
 
 const MainRouter = () => {
   const basePaths: RouteObject[] = [
