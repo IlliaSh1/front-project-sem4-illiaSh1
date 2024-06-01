@@ -3,7 +3,6 @@ import { IUniversity } from "./university.interface";
 import CardUniversity from "../Card/cardUniversity";
 import axios from "axios";
 import { InView, useInView } from "react-intersection-observer";
-import { ListStyle } from "../List/List.styles";
 import styled from "styled-components";
 
 const LIMIT_UNIVERSITIES = 10;
